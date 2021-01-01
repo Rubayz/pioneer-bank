@@ -60,20 +60,7 @@
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById("addDeposit").addEventListener(function() {
-            const depositAmountNaN = document.getElementById("depositAmount");
-            if(isNaN(depositAmountNaN)) {
-                alert("Please specify a number to deposit");
-            }
-        })
-        document.getElementById("addWithdraw").addEventListener(function() {
-            const withdrawAmountNaN = document.getElementById("withdrawAmount");
-            if(isNaN(withdrawAmountNaN)) {
-                alert("Please specify a number to withdraw");
-            }
-        })
-        
+    <script>        
         // Login button event handler
         const loginBtn = document.getElementById('login');
         loginBtn.addEventListener('click', function(){
@@ -88,10 +75,12 @@
         const depositBtn = document.getElementById('addDeposit');
         depositBtn.addEventListener('click', function(){
             const depositNumber = getInputNumber("depositAmount");
-            
+            const updateDepositNaN = document.getElementById("depositAmount");
             updateSpan("currentDeposit", depositNumber);
-            updateSpan("currentBalance", depositNumber);        
-
+            updateSpan("currentBalance", depositNumber);
+            if(isNaN(updateDepositNaN)) {
+                alert("PLease sepcify a number to deposit")
+            }
             document.getElementById('depositAmount').value = "";
         })
 
@@ -101,9 +90,13 @@
         const withdrawBtn = document.getElementById('addWithdraw');
         withdrawBtn.addEventListener("click", function(){
           const withdrawNumber = getInputNumber("withdrawAmount");
+          const updateWithdrawNaN = document.getElementById("withdrawAmount")
           updateSpan("currentWithdraw", withdrawNumber);
 
           updateSpan("currentBalance",-1 * withdrawNumber);
+          if(isNaN(updateWithdrawNaN)) {
+                alert("PLease sepcify a number to deposit")
+            }
           document.getElementById("withdrawAmount").value = "";
         })
 
