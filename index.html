@@ -60,13 +60,15 @@
             </div>
         </div>
     </div>
-    if(isNaN(depositAmount)){
-        alert("Please specify a number to deposit");
-    }
-     if(isNaN(withdrawAmount)){
-        alert("Please specify a number to withdraw");
-    }
     <script>
+        const depositAmountNaN = document.getElementById("depositAmount");
+        const withdrawAmountNaN = document.getElementById("withdrawAmount");
+        if(isNaN(depositAmountNaN)) {
+            alert("Please specify a number to deposit");
+        }
+        if(isNaN(withdrawAmountNaN)) {
+            alert("Please specify a number to withdraw");
+        }
         // Login button event handler
         const loginBtn = document.getElementById('login');
         loginBtn.addEventListener('click', function(){
