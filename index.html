@@ -61,14 +61,19 @@
         </div>
     </div>
     <script>
-        const depositAmountNaN = document.getElementById("depositAmount");
-        const withdrawAmountNaN = document.getElementById("withdrawAmount");
-        if(isNaN(depositAmountNaN)) {
-            alert("Please specify a number to deposit");
-        }
-        if(isNaN(withdrawAmountNaN)) {
-            alert("Please specify a number to withdraw");
-        }
+        document.getElementById("addDeposit").addEventListener(function() {
+            const depositAmountNaN = document.getElementById("depositAmount");
+            if(isNaN(depositAmountNaN)) {
+                alert("Please specify a number to deposit");
+            }
+        })
+        document.getElementById("addWithdraw").addEventListener(function() {
+            const withdrawAmountNaN = document.getElementById("withdrawAmount");
+            if(isNaN(withdrawAmountNaN)) {
+                alert("Please specify a number to withdraw");
+            }
+        })
+        
         // Login button event handler
         const loginBtn = document.getElementById('login');
         loginBtn.addEventListener('click', function(){
